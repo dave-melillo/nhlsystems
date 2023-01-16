@@ -233,6 +233,13 @@ dfstl = dfy.loc[mask]
 # Main
 st.title(f"NHL Systems")
 
+st.markdown('Inspiration https://www.vsin.com/advantage-nhl-rest-vs-tired-matchups/')
+
+rvt = "Rest vs Tired here is expressed as **roll7_adv**. Whichever team is mentioned here has played fewer games on a rolling 7 day basis"
+b2b = "We also included a **back2back_adv** metric which indicates which team is playing a back to back game. For instance, if home is the value of back2back_adv, this means the away team played last night and is coming into a back to back contest"
+
+st.markdown(rvt)
+st.markdown(b2b)
 # Main - dataframes
 st.markdown('### Dataframe')
 
