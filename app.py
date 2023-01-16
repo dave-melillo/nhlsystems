@@ -6,6 +6,7 @@ import requests
 import urllib.request
 import json
 from datetime import datetime
+import datetime as dt
 import streamlit as st
 
 #get current date
@@ -203,7 +204,8 @@ dfy = dfy[[
  'away_back2back'
  ]]
 
-
+xer  = datetime.today().strftime('%Y-%m-%d')
+yer  = datetime.today().strftime('%Y-%m-%d')
 
 
 
@@ -218,11 +220,7 @@ st.sidebar.markdown('### Data Filters')
 #price_choice = st.sidebar.slider(
 #    'Max Price:', min_value=4.0, max_value=15.0, step=.5, value=15.0)
 
-start_date, end_date = st.sidebar.date_input('Chose a date range :', [])
-if start_date < end_date:
-    pass
-else:
-    st.error('Error')
+start_date, end_date = st.sidebar.date_input('Choose a date range :', [datetime.today(), datetime.today()+dt.timedelta(days=7)])
 
 #greater than the start date and smaller than the end date
 mask = (dfy['datex'] > start_date) & (dfy['datex'] <= end_date)
